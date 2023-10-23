@@ -1,17 +1,28 @@
-import Link from "../components/Link";
-import Route from "../components/Route";
-import Contact from "../pages/Contact";
+import NavBar from "../components/NavBar";
+import Name from "../components/Name";
 
 function App() {
   return (
-    <div>
-      <Link to="/contact">Go to Contacts</Link>
-      <Link to="/home">Go to Home</Link>
-      <div>
+    <div className="m-5">
+      <Name />
+      <NavBar />
+      {/* <div>
+        <Route path="/">
+          <Home />
+        </Route>
+
+        <Route path="/read">
+          <Read />
+        </Route>
+
         <Route path="/contact">
           <Contact />
         </Route>
-      </div>
+
+        <Route path="/contact">
+          <Contact />
+        </Route>
+      </div> */}
     </div>
   );
 }

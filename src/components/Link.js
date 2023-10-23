@@ -1,11 +1,14 @@
 import classNames from "classnames";
-import { useContext } from "react";
-import NavigationContext from "../context/navigation";
+import useNavigation from "../hooks/useNavigation";
 
-function Link({ to, children }) {
-  const { navigate } = useContext(NavigationContext);
+function Link({ to, children, className, activeClassName }) {
+  const { navigate, currentPath } = useNavigation();
 
-  const classes = classNames("text-blue-500");
+  const classes = classNames(
+    "text-black",
+    className,
+    currentPath === to && activeClassName
+  );
 
   //if user holding command(meta) or ctrl key allow new window to be opened, else prevent default refresh
   const handleClick = (event) => {
