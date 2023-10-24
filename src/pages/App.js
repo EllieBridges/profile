@@ -2,9 +2,9 @@ import NavBar from "../components/NavBar";
 import Route from "../components/Route";
 import Name from "../components/Name";
 import Home from "./Home";
-import Read from "./Read";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
+import Colour from "./Colour";
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/read">
-          <Read />
+        <Route path="/colour">
+          <Colour />
         </Route>
 
         <Route path="/gallery">

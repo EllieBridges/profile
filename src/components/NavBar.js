@@ -3,7 +3,7 @@ import Link from "./Link";
 function NavBar() {
   const links = [
     { label: "Home", path: "/" },
-    { label: "Read", path: "/articles" },
+    { label: "Colour", path: "/colour" },
     { label: "Gallery", path: "/gallery" },
     { label: "Contact", path: "/contact" },
   ];
@@ -22,8 +22,10 @@ function NavBar() {
   });
 
   return (
-    <div className="fixed top-10 right-0 overflow-y-scroll flex flex-row sm:justify-evenly md:ml-10 md:left-0 z-10">
-      {renderedLinks}
+    <div className="fixed top-0 right-0 md:left-0 z-10 bg-white p-10 w-screen">
+      <div className="top-0 right-0 bg-white overflow-y-scroll flex flex-row content-center sm:justify-evenly md:p-50 md:left-0">
+        {renderedLinks}
+      </div>
     </div>
   );
 }

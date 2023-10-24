@@ -26,10 +26,10 @@ function Hero() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scroll]);
 
   return (
-    <div className="h-1/2 md:h-2/3">
+    <div className="h-1/2 md:h-2/3 z-0">
       <div className="mt-48 relative w-auto h-full bg-yellow-400">
         <div
           className="absolute bottom-0 right-0 w-1/2 h-2/3 bg-green-400 transition-transform transform translate-y-0 ease-in-out duration-700"
