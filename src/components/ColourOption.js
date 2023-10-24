@@ -2,9 +2,9 @@ function ColourOption({ key, colour }) {
   return (
     <div
       key={colour}
-      className="relative w-28 h-28 rounded-full bg-white-500 shadow "
+      className="flex justify-center w-28 h-28 rounded-full bg-white-500 shadow "
     >
-      <div className="absolute w-2/3 h-2/3 place-self-center rounded-full p-4 bg-red-500"></div>
+      <div className="place-self-center w-24 h-24 rounded-full p-4 bg-red-500"></div>
     </div>
   );
 }
