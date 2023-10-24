@@ -1,7 +1,9 @@
+import Hero from "../components/Hero";
+
 function Home() {
   return (
-    <div>
-      <h1>This is Home</h1>
+    <div className="h-screen">
+      <Hero />
     </div>
   );
 }

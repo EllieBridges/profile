@@ -1,8 +1,8 @@
 function Name() {
   return (
-    <div className="m-2">
-      <div className="leading-3 italic font-['Sansita_Swashed']">Ellie</div>
-      <div className=" leading-3 ml-2 italic font-['Sansita_Swashed']">
+    <div className="fixed top-5 left-0 m-2 md:text-2xl">
+      <div className="leading-4 italic font-['Sansita_Swashed']">Ellie</div>
+      <div className="leading-4 ml-4 italic font-['Sansita_Swashed']">
         Bridges
       </div>
     </div>

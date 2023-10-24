@@ -13,7 +13,7 @@ function NavBar() {
       <Link
         key={link.label}
         to={link.path}
-        className="mr-3"
+        className="mx-5"
         activeClassName="font-bold"
       >
         {link.label}
@@ -22,7 +22,7 @@ function NavBar() {
   });
 
   return (
-    <div className="m-2 sticky top-0 overflow-y-scroll flex flex-row justify-evenly">
+    <div className="fixed top-10 right-0 overflow-y-scroll flex flex-row sm:justify-evenly md:ml-10 md:left-0 z-10">
       {renderedLinks}
     </div>
   );
