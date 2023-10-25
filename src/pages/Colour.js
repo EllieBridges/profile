@@ -1,30 +1,21 @@
-import { useState } from "react";
-import rGBConversion from "../utils/rgbToHex";
+import { useEffect, useState } from "react";
+import { GoQuestion } from "react-icons/go";
+import rGBConversion, { randomRGB } from "../utils/rgbToHex";
+import Help from "../components/Help";
 import ColourOption from "../components/ColourOption";
+import Button from "../components/Button";
 
 function Colour() {
-  const [hex, setHex] = useState("FFFFFF");
+  const [answer, setAnswer] = useState();
+  const [hex, setHex] = useState("");
 
-  //Creates a random RGB component
-  const randomPrimary = () => {
-    return Math.floor(Math.random() * 255);
-  };
-
-  //Combines random RGB values to form a full RGB code
-  const randomRGB = () => {
-    let rgb = [];
-    for (let i = 0; i < 3; i++) {
-      const primary = randomPrimary();
-      rgb.push(primary);
-    }
-    return rgb;
-  };
-
-  const colour = randomRGB();
-
-  const handleClick = () => {
-    setHex(rGBConversion(colourSelector(colours)));
-  };
+  useEffect(() => {
+    colourSelector(colours);
+    // setAnswer(palette);
+    // console.log(answer);
+    // setHex(rGBConversion(palette));
+    // console.log(hex);
+  }, []);
 
   const colourPalette = (num) => {
     let colourOptions = [];
@@ -34,28 +25,31 @@ function Colour() {
     return colourOptions;
   };
 
-  const colours = colourPalette(5);
+  //choose the number of choices (more = harder the game)
+  const colours = colourPalette(6);
 
+  //selects colour to guess in rgb
   const colourSelector = (arr) => {
     const index = Math.floor(Math.random() * arr.length);
     console.log(index);
     return arr[index];
   };
 
-  console.log("colours", colours);
-
   const renderedColours = colours.map((colour) => {
     return <ColourOption key={colour} colour={colour} />;
   });
 
   return (
-    <div className="pt-48 text-center">
-      Guess the Hex
-      <div className="">{`Hex Code ${hex}`}</div>
-      <div className="grid grid-cols-4 justify-items-center items-center h-96 w-full">
+    <div className="pt-28 text-center">
+      <Help />
+      <div className="pt-14">
+        <h1 className="display">Guess the Hex</h1>
+        {hex && <h2>{`Hex Code ${hex}`}</h2>}
+      </div>
+      <div className="grid grid-cols-3 justify-items-center items-center h-96 w-full">
         {renderedColours}
       </div>
-      <button onClick={handleClick}>click to change hex</button>
+      <Button>Lets Play </Button>
     </div>
   );
 }

@@ -3,7 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   theme: {
     fontFamily: {
-      display: ["Playfair-Display"],
+      display: ["Sansita_Swashed", "cursive"],
+      serif: ["Playfair-Display", "serif"],
+      inter: ["inter", "sans"],
     },
     extend: {},
   },

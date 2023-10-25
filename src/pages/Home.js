@@ -4,7 +4,7 @@ function Home() {
   return (
     <div id="pageContainer" className="h-screen">
       <Hero />
-      <div className="relative bg-white font-display px-10 py-40 z-5">
+      <div className="relative bg-white font-serif px-10 py-40 z-5">
         <div className="sm:text-xl text-center italic">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
           ligula pretium, suscipit ipsum id, placerat dolor. Donec sagittis

@@ -23,7 +23,7 @@ function NavBar() {
 
   return (
     <div className="fixed top-0 right-0 md:left-0 z-10 bg-white p-10 w-screen">
-      <div className="top-0 right-0 bg-white overflow-y-scroll flex flex-row content-center sm:justify-evenly md:p-50 md:left-0">
+      <div className="font-inter-400 text-lg top-0 right-0 bg-white overflow-y-scroll flex flex-row content-center sm:justify-evenly md:p-50 md:left-0">
         {renderedLinks}
       </div>
     </div>

@@ -1,3 +1,18 @@
+//Creates a random RGB component
+const randomPrimary = () => {
+  return Math.floor(Math.random() * 256);
+};
+
+//Combines random RGB values to form a full RGB code
+const randomRGB = () => {
+  let rgb = [];
+  for (let i = 0; i < 3; i++) {
+    const primary = randomPrimary();
+    rgb.push(primary);
+  }
+  return rgb;
+};
+
 const letters = ["A", "B", "C", "D", "E", "F"];
 
 const divide = (num) => {
@@ -32,3 +47,4 @@ const rGBConversion = (rgb) => {
 };
 
 export default rGBConversion;
+export { randomRGB };
