@@ -13,7 +13,7 @@ function ColourOption({
   const divColour = { backgroundColor: `rgb(${colourString})` };
 
   const classes = classNames(
-    `flex justify-center w-[100px] h-[100px] rounded-full bg-white-500 hover:scale-125 md:w-[150px] md:h-[150px]`,
+    `flex justify-center w-[125px] h-[125px] rounded-full bg-white-500 hover:scale-125 hover:border-black hover:border-2 sm:w-[150px] sm:h-[150px]`,
     className,
     highlighted
   );

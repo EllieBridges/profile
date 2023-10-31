@@ -27,11 +27,17 @@ function Help() {
   }, []);
 
   const helpTool = toggle ? (
-    <GoQuestion size={30} />
+    <GoQuestion
+      size={30}
+      color="black"
+      className="hover:bg-yellow-300 rounded-full"
+    />
   ) : (
-    <div ref={helpEl} className="font-sans bg-light-pink p-3">
-      <h1 className="text-lg md:text-xl">How to Play</h1>
-      <h3 className="text-md">
+    <div ref={helpEl} className="font-sans bg-light-pink p-3 rounded">
+      <h1 className="text-lg md:text-xl font-bold text-white m-1">
+        How to Play
+      </h1>
+      <h3 className="text-md font-bold text-white m-1">
         This is a game to test your hexadecimal colour knowledge
       </h3>
       <p className="text-sm">

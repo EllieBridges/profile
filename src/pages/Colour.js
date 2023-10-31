@@ -62,7 +62,7 @@ function Colour() {
         key={colour}
         colour={colour}
         selected={selected.current}
-        highlighted={"border-green border-4"}
+        highlighted={"border border-grey-200"}
         handleClick={handleSelection}
         className={"my-10"}
       />
@@ -72,18 +72,18 @@ function Colour() {
   return (
     <div className="pt-28 text-center">
       <Help />
-      <div className="pt-14">
-        <h1 className="font-['Sansita_Swashed'] italic text-black text-5xl m-5 text-orange text-center md:text-6xl">
+      <div className="">
+        <h1 className="font-['Sansita_Swashed'] italic text-black text-5xl m-5 pb-5 text-orange text-center md:text-8xl">
           Guess the Hex
         </h1>
       </div>
       {playing ? (
         <div>
-          <h2 className="text-xl">Hex {hex}</h2>
-          <div className="grid grid-rows-3 mx-auto h-[350px] justify-items-center items-center md:h-48 w-full md:grid-rows-1 md:grid-cols-3">
+          <h2 className="text-xl mb-12">Hex {hex}</h2>
+          <div className="grid grid-rows-3 mx-auto h-[400px] justify-items-center items-center sm:h-48 w-full sm:grid-rows-1 sm:grid-cols-3">
             {renderedColours}
           </div>
-          <div>{points && <Result points={points} />}</div>
+          <div>{points > 0 && <Result points={points} />}</div>
         </div>
       ) : (
         <GameOver handleClick={playAgain} topScore={points} />
