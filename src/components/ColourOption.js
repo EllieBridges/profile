@@ -1,16 +1,31 @@
-function ColourOption({ colour }) {
+import classNames from "classnames";
+
+function ColourOption({
+  colour,
+  handleClick,
+  highlighted,
+  className,
+  selected,
+}) {
   const colourString = colour.join();
+  console.log("colourString", colourString, "selected", selected);
 
   const divColour = { backgroundColor: `rgb(${colourString})` };
 
+  const classes = classNames(
+    `flex justify-center w-[100px] h-[100px] rounded-full bg-white-500 hover:scale-125 md:w-[150px] md:h-[150px]`,
+    className,
+    highlighted
+  );
+
   return (
-    <div className="flex justify-center w-28 h-28 rounded-full bg-white-500 shadow ">
+    <div className={classes}>
       <div
-        className="colourOption place-self-center w-24 h-24 rounded-full p-4"
+        className="colourOption place-self-center w-5/6 h-5/6 rounded-full p-4"
         style={divColour}
-      >
-        {colourString}
-      </div>
+        id={colour}
+        onClick={handleClick}
+      ></div>
     </div>
   );
 }

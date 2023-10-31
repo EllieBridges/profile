@@ -1,6 +1,9 @@
-function Button({ children }) {
+import classNames from "classnames";
+
+function Button({ children, className, handleClick }) {
+  const classes = classNames("p-2 text-white rounded", className);
   return (
-    <button className="p-2 bg-pink-200 rounded text-white text-2xl">
+    <button onClick={handleClick} className={classes}>
       {children}
     </button>
   );

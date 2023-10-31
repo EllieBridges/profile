@@ -7,16 +7,17 @@ function Hero() {
   let ref = useRef(0);
 
   useEffect(() => {
+    console.log(position);
     //CHECK ref is correctly adjusting but not setScroll
     const handleScroll = () => {
       if (window.scrollY > ref.current) {
         ref.current = window.scrollY;
-        setPosition(-50);
+        setPosition(-80);
         console.log(scroll, ref.current);
       } else {
         ref.current = window.scrollY;
         setScroll("up");
-        setPosition(50);
+        setPosition(80);
         console.log(scroll, ref.current);
       }
     };
@@ -29,18 +30,16 @@ function Hero() {
   }, [scroll]);
 
   return (
-    <div className="h-1/2 md:h-2/3 z-0">
-      <div className="mt-48 relative w-auto h-full bg-yellow-400">
+    <div className="h-1/2 md:h-4/5 md:w-3/4 m-auto z-2">
+      <div className="relative w-auto h-full bg-yellow-400">
         <div
-          className="absolute bottom-0 right-0 w-1/2 h-2/3 bg-green-400 transition-transform transform translate-y-0 ease-in-out duration-700"
+          className="absolute bg-[url('../public/img/mountains.png')] bg-cover bottom-0 w-full overflow-visible h-full bg-pink-400 transition-transform transform translate-y-0 ease-in-out duration-1000"
           style={{ transform: `translateY(${position}px)` }}
-        >
-          Move me
-        </div>
-        <div
-          className="absolute bottom-0 left-0 w-1/2 h-2/3 bg-pink-400 transition-transform transform translate-y-0 ease-in-out duration-700"
-          style={{ transform: `translateY(${position * 2}px)` }}
         ></div>
+        {/* <div
+          className="absolute bg-[url('../public/img/pink-hills.png')] bottom-0 bg-cover bg-top w-full h-[600px] transition-transform transform translate-y-0 ease-in-out duration-1000"
+          style={{ transform: `translateY(${-position}px)` }}
+        ></div> */}
       </div>
     </div>
   );

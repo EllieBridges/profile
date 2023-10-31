@@ -31,7 +31,7 @@ const charCalc = (num, arr) => {
   return num;
 };
 
-const rGBConversion = (rgb) => {
+const rgbToHex = (rgb) => {
   let hex = [];
 
   rgb.map((colourValue) => {
@@ -46,5 +46,5 @@ const rGBConversion = (rgb) => {
   return `#${hex.join("")}`;
 };
 
-export default rGBConversion;
+export default rgbToHex;
 export { randomRGB };

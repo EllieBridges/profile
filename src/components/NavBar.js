@@ -14,7 +14,7 @@ function NavBar() {
         key={link.label}
         to={link.path}
         className="mx-5"
-        activeClassName="font-bold"
+        activeClassName="font-bold text-hot-pink"
       >
         {link.label}
       </Link>
