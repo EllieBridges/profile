@@ -19,8 +19,6 @@ function Colour() {
 
   const selected = useRef();
 
-  const topScore = useRef(0);
-
   const COLOUR_OPTION_COUNT = 3;
 
   useEffect(() => {
@@ -64,7 +62,7 @@ function Colour() {
         selected={selected.current}
         highlighted={"border border-grey-200"}
         handleClick={handleSelection}
-        className={"my-10"}
+        className={"my-5 sm:my-10"}
       />
     );
   });
@@ -73,14 +71,14 @@ function Colour() {
     <div className="pt-28 text-center">
       <Help />
       <div className="">
-        <h1 className="font-['Sansita_Swashed'] italic text-black text-5xl m-5 pb-5 text-orange text-center md:text-8xl">
+        <h1 className="font-['Sansita_Swashed'] italic text-black text-6xl m-5 pb-5 text-orange text-center sm:text-8xl">
           Guess the Hex
         </h1>
       </div>
       {playing ? (
         <div>
-          <h2 className="text-xl mb-12">Hex {hex}</h2>
-          <div className="grid grid-rows-3 mx-auto h-[400px] justify-items-center items-center sm:h-48 w-full sm:grid-rows-1 sm:grid-cols-3">
+          <h2 className="text-xl sm:text-2xl mb-12">Hex {hex}</h2>
+          <div className="grid grid-rows-3 mx-auto h-[400px] justify-items-center items-center  w-full sm:h-48 sm:grid-rows-1 sm:grid-cols-3 lg:px-64">
             {renderedColours}
           </div>
           <div>{points > 0 && <Result points={points} />}</div>

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="md:m-5">
       <div className="">
-        {window.innerWidth > 430 && <Name />}
+        {/* {window.innerWidth > 430 && <Name />} */}
         <NavBar />
       </div>
       <div className="m-10 md:m-20">
