@@ -8,7 +8,8 @@ function Link({ to, children, className, activeClassName }) {
     "text-black",
     className,
     currentPath === to && activeClassName,
-    children === "Ellie Bridges" && "font-['Sansita_Swashed'] italic text-xl"
+    children === "Ellie Bridges" &&
+      "font-['Sansita_Swashed'] italic text-xl lg:text-3xl text-orange"
   );
 
   //if user holding command(meta) or ctrl key allow new window to be opened, else prevent default refresh

@@ -6,8 +6,6 @@ import Result from "../components/Result";
 import GameOver from "../components/GameOver";
 
 function Colour() {
-  // const [answer, setAnswer] = useState();
-  // const [hex, setHex] = useState("");
   const [colours, setColours] = useState([
     [255, 0, 0],
     [255, 0, 255],
@@ -29,9 +27,8 @@ function Colour() {
     let colourOptions = [];
     for (let i = 0; i < num; i++) {
       colourOptions.push(randomRGB());
-      setColours(colourOptions);
     }
-    return colourOptions;
+    setColours(colourOptions);
   };
 
   const index = Math.floor(Math.random() * colours.length);
@@ -40,8 +37,9 @@ function Colour() {
 
   console.log("answer", answer);
 
-  const handleSelection = (event) => {
-    selected.current = event.target.id;
+  const handleSelection = (e) => {
+    e.preventDefault();
+    selected.current = e.target.id;
     if (selected.current === answer.join()) {
       setPoints(points + 1);
     } else {
@@ -49,7 +47,8 @@ function Colour() {
     }
   };
 
-  const playAgain = () => {
+  const playAgain = (e) => {
+    e.preventDefault();
     setPoints(0);
     setPlaying(true);
   };

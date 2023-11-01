@@ -1,8 +1,7 @@
 import NavBar from "../components/NavBar";
 import Route from "../components/Route";
-import Name from "../components/Name";
 import Home from "./Home";
-import Gallery from "./Gallery";
+import Map from "./Map";
 import Contact from "./Contact";
 import Colour from "./Colour";
 
@@ -22,8 +21,8 @@ function App() {
           <Colour />
         </Route>
 
-        <Route path="/gallery">
-          <Gallery />
+        <Route path="/map">
+          <Map />
         </Route>
 
         <Route path="/contact">
