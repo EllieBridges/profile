@@ -2,7 +2,7 @@ import { useLoadScript } from "@react-google-maps/api";
 
 function Map() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCm2WrV7bWWobLwx_DoNr_l1PdQiFC78YY",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   });
 
