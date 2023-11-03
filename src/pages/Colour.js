@@ -15,7 +15,7 @@ function Colour() {
   const [playing, setPlaying] = useState(true);
   const [points, setPoints] = useState(0);
 
-  const selected = useRef();
+  const selected = useRef(null);
 
   const COLOUR_OPTION_COUNT = 3;
 
