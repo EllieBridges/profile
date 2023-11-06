@@ -2,7 +2,7 @@ import classNames from "classnames";
 import useNavigation from "../hooks/useNavigation";
 
 function Link({ to, children, className, activeClassName }) {
-  const { navigate, currentPath } = useNavigation();
+  const { currentPath, navigate } = useNavigation();
 
   //if user holding command(meta) or ctrl key allow new window to be opened, else prevent default refresh
   const handleClick = (event) => {
@@ -18,7 +18,7 @@ function Link({ to, children, className, activeClassName }) {
     className,
     currentPath === to && activeClassName,
     children === "Ellie Bridges" &&
-      "font-['Sansita_Swashed'] italic text-xl lg:text-3xl text-orange"
+      "font-['Sansita_Swashed'] italic text-xl md:text-2xl lg:text-3xl text-orange"
   );
 
   return (

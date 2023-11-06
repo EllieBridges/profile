@@ -9,11 +9,7 @@ This is my personal professional profile React app, showcasing my skills, experi
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Customization](#customization)
 - [Technologies Used](#technologies-used)
-- [License](#license)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
 - [Contact Information](#contact-information)
 
 ## Introduction

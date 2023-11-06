@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
 function ImagesGallery() {
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="w-5/6 h-full mx-auto">
       <Box sx={{ overflowY: "scroll" }}>
@@ -14,6 +16,7 @@ function ImagesGallery() {
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 alt={item.title}
                 loading="lazy"
+                className="hover:scale-110"
               />
             </ImageListItem>
           ))}

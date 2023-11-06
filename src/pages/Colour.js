@@ -68,17 +68,17 @@ function Colour() {
   });
 
   return (
-    <div className="pt-28 text-center">
+    <div className="relative pt-28 text-center w-screen px-5">
       <Help />
-      <div className="">
-        <h1 className="font-['Sansita_Swashed'] italic text-black text-6xl m-5 pb-5 text-orange text-center sm:text-8xl">
+      <div className="m-auto">
+        <h1 className="font-['Sansita_Swashed'] italic text-black text-4xl text-orange text-center sm:text-6xl md:text-8xl sm:pb-5">
           Guess the Hex
         </h1>
       </div>
       {playing ? (
-        <div>
-          <h2 className="text-xl sm:text-2xl mb-12">Hex {hex}</h2>
-          <div className="grid grid-rows-3 mx-auto h-[400px] justify-items-center items-center w-full sm:h-48 sm:grid-rows-1 sm:grid-cols-3 lg:px-64">
+        <div className="m-4">
+          <h2 className="text-xl sm:text-2xl mb-8">Hex {hex}</h2>
+          <div className="grid grid-cols-3 mx-auto h-[200px] w-fit justify-items-center items-center sm:h-48 sm:grid-rows-1 lg:px-64">
             {renderedColours}
           </div>
           <div>{points > 0 && <Result points={points} />}</div>
@@ -87,10 +87,22 @@ function Colour() {
         <GameOver handleClick={playAgain} topScore={points} />
       )}
       <Description
-        title="Details"
-        content="I wanted understand how to convert colours from RGB to hex codes and the meaning behind hex codes themselves. I create art using colours that usually are given a hex code in Procreate, so I thought it would be fun to play with the two types and create a little game in the process. As the logic behind the game grew, I separated the functions into a separate utilities folder to make the components neater and easier to read."
-        colour="light-blue"
-        accent="blue"
+        title="Colour Game"
+        content="I wanted to understand how hex codes are created and how to translate what colour they might be. I thought creating a game would help me pull apart the mystery of them, whilst practicing my coding skills. I decided to keep the raw data in RGB as an easy and consistent comparision. I found value in another application for useRef and understanding how to use state management efficiently. My main learning outcome is when a component relies on multiple state, to breakdown which variables can be handled with standard variables, rather than its own state. This cut down undesirable re-renders, making the processes more efficient."
+        colour="#adcde4"
+        accent="#839dd7"
+        softwares={["ClassNames", "React icons"]}
+        skills={[
+          "UseEffect",
+          "UseState",
+          "UseRef",
+          "Event handlers",
+          "Default and named exports",
+          "Props",
+          "Event listeners",
+          "Logical problem-solving",
+          "Flex and grid",
+        ]}
       />
     </div>
   );
