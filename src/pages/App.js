@@ -2,17 +2,16 @@ import NavBar from "../components/NavBar";
 import Route from "../components/Route";
 import Home from "./Home";
 import Map from "./Map";
-import Contact from "./Contact";
+import Gallery from "./Gallery";
 import Colour from "./Colour";
 
 function App() {
   return (
-    <div className="md:m-5">
+    <div className="flex flex-col m-5  mx-auto items-center">
       <div className="">
-        {/* {window.innerWidth > 430 && <Name />} */}
         <NavBar />
       </div>
-      <div className="m-10 md:m-20">
+      <div className="m-5">
         <Route path="/">
           <Home />
         </Route>
@@ -25,8 +24,8 @@ function App() {
           <Map />
         </Route>
 
-        <Route path="/contact">
-          <Contact />
+        <Route path="/gallery">
+          <Gallery />
         </Route>
       </div>
     </div>

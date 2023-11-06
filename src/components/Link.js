@@ -4,6 +4,15 @@ import useNavigation from "../hooks/useNavigation";
 function Link({ to, children, className, activeClassName }) {
   const { navigate, currentPath } = useNavigation();
 
+  //if user holding command(meta) or ctrl key allow new window to be opened, else prevent default refresh
+  const handleClick = (event) => {
+    if (event.metaKey || event.ctrlKey) {
+      return;
+    }
+    event.preventDefault();
+    navigate(to);
+  };
+
   const classes = classNames(
     "text-black",
     className,
@@ -11,16 +20,6 @@ function Link({ to, children, className, activeClassName }) {
     children === "Ellie Bridges" &&
       "font-['Sansita_Swashed'] italic text-xl lg:text-3xl text-orange"
   );
-
-  //if user holding command(meta) or ctrl key allow new window to be opened, else prevent default refresh
-  const handleClick = (event) => {
-    if (event.metaKey || event.ctrlKey) {
-      return;
-    }
-    event.preventDefault();
-
-    navigate(to);
-  };
 
   return (
     <a className={classes} href={to} onClick={handleClick}>

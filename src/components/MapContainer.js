@@ -23,12 +23,12 @@ const MapContainer = () => {
 
   return (
     <APIProvider
-      apiKey={"AIzaSyCVYNubHc3sZaoJkJPHxe2LWuxxvRrP0Ts"}
+      apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
       className="map-container"
     >
       <Map
         mapId={"e21ebf05c669eb98"}
-        className="google-map"
+        className="google-map w-200 h-200 sm:w-800 sm:h-800"
         zoom={3}
         center={{ lat: 53.0036294, lng: -105.0135052 }}
       >

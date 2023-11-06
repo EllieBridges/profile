@@ -5,7 +5,7 @@ function NavBar() {
     { label: "Ellie Bridges", path: "/" },
     { label: "Colour", path: "/colour" },
     { label: "Map", path: "/map" },
-    { label: "Contact", path: "/contact" },
+    { label: "Gallery", path: "/gallery" },
   ];
 
   const renderedLinks = links.map((link) => {
@@ -22,8 +22,8 @@ function NavBar() {
   });
 
   return (
-    <div className="fixed absolute top-0 px-5 right-0 z-10 bg-white w-screen sm:py-5">
-      <div className="grid grid-cols-4 h-24 items-center justify-items-end font-inter-400 text-sm font-bold bg-white overflow-y-scroll flex flex-row sm:justify-items-center sm:text-lg sm:font-normal sm:justify-evenly md:p-50 md:left-0 md:text-2xl">
+    <div className="fixed top-0 px-5 right-0 z-10 bg-white w-screen sm:py-5">
+      <div className="grid grid-cols-4 h-24 items-center justify-items-center font-inter-400 text-sm font-bold bg-white overflow-y-scroll flex flex-row sm:justify-items-center sm:text-lg sm:font-normal sm:justify-evenly md:p-50 md:left-0 md:text-2xl">
         {renderedLinks}
       </div>
     </div>

@@ -4,6 +4,7 @@ import Help from "../components/Help";
 import ColourOption from "../components/ColourOption";
 import Result from "../components/Result";
 import GameOver from "../components/GameOver";
+import Description from "../components/Description";
 
 function Colour() {
   const [colours, setColours] = useState([
@@ -77,7 +78,7 @@ function Colour() {
       {playing ? (
         <div>
           <h2 className="text-xl sm:text-2xl mb-12">Hex {hex}</h2>
-          <div className="grid grid-rows-3 mx-auto h-[400px] justify-items-center items-center  w-full sm:h-48 sm:grid-rows-1 sm:grid-cols-3 lg:px-64">
+          <div className="grid grid-rows-3 mx-auto h-[400px] justify-items-center items-center w-full sm:h-48 sm:grid-rows-1 sm:grid-cols-3 lg:px-64">
             {renderedColours}
           </div>
           <div>{points > 0 && <Result points={points} />}</div>
@@ -85,6 +86,12 @@ function Colour() {
       ) : (
         <GameOver handleClick={playAgain} topScore={points} />
       )}
+      <Description
+        title="Details"
+        content="I wanted understand how to convert colours from RGB to hex codes and the meaning behind hex codes themselves. I create art using colours that usually are given a hex code in Procreate, so I thought it would be fun to play with the two types and create a little game in the process. As the logic behind the game grew, I separated the functions into a separate utilities folder to make the components neater and easier to read."
+        colour="light-blue"
+        accent="blue"
+      />
     </div>
   );
 }
