@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
-import getWeatherData from "../api/weatherAPI";
 import Description from "../components/Description";
 import Sites from "../components/Sites";
 import Paragraph from "../components/Paragraph";
 
 function Home() {
-  const [weather, setWeather] = useState("");
-
-  useEffect(() => {
-    getWeatherData()
-      .then((weatherType) => setWeather(weatherType))
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  console.log("weather", weather);
   return (
-    <div id="pageContainer" className="h-screen">
-      <Hero weatherImage={weather} />
+    <div id="pageContainer" className="relative h-screen m-5">
+      <Hero />
       <div className="bg-white my-10 w-full text-5xl text-center z-5 md:mb-28">
         <section className="text-lg italic sm:text-2xl md:text-4xl">
           <h2 className="text-hot-pink py-10 sm:py-5 md:mb-32">

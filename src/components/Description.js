@@ -22,7 +22,11 @@ function Description({ title, content, colour, accent, softwares, skills }) {
           <h2 className="font-bold text-lg sm:text-xl">Software</h2>
           <ul className="w-[200px] sm:w-fit">
             {softwares.map((software) => {
-              return <li className="list-disc text-left">{software}</li>;
+              return (
+                <li key={software} className="list-disc text-left">
+                  {software}
+                </li>
+              );
             })}
           </ul>
         </div>
@@ -30,7 +34,11 @@ function Description({ title, content, colour, accent, softwares, skills }) {
           <h2 className="font-bold text-lg sm:text-xl">Skills</h2>
           <ul className="w-[200px] sm:w-fit">
             {skills.map((skill) => {
-              return <li className="list-disc text-left">{skill}</li>;
+              return (
+                <li key={skill} className="list-disc text-left">
+                  {skill}
+                </li>
+              );
             })}
           </ul>
         </div>

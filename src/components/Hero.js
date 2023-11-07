@@ -1,14 +1,46 @@
+import { useState, useEffect } from "react";
+import getWeatherData from "../api/weatherAPI";
 import classNames from "classnames";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
+import GrantAccess from "./GrantAccess";
 
 function Hero({ weatherImage }) {
-  console.log("weatherImage", weatherImage);
+  const [lat, setLat] = useState(null);
+  const [long, setLong] = useState(null);
+  const [weather, setWeather] = useState("");
+
+  // hooks
   const position = useScroll();
   const windowSize = useWindowSize();
 
+  const success = (position) => {
+    setLat(position.coords.latitude);
+    setLong(position.coords.longitude);
+  };
+
+  const getUserLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser");
+      console.log("Geolocation is not supported by your browser");
+    } else {
+      // status.textContent = "Locating…";
+      navigator.geolocation.getCurrentPosition(success, (data) => {
+        console.log(data);
+      });
+    }
+  };
+
+  useEffect(() => {
+    getWeatherData(lat, long)
+      .then((weatherType) => setWeather(weatherType))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [lat, long]);
+
+  console.log(weather, "WEATHER");
   const classes = classNames("absolute bg-cover bg-right-top w-full");
-  const imageSrc = `/public/img/mist.png`;
 
   return (
     <div className="relative h-1/2 w-full mx-auto z-2 md:h-2/3 md:h-5/6 lg:w-4/5 z-2">
@@ -29,9 +61,11 @@ function Hero({ weatherImage }) {
           ></div>
           <div
             className={`${classes} h-[900px] 2xl:bg-top lg:h-[800px] xl:h-[850px] 2xl:h-[900px] z-3`}
-            style={{ backgroundImage: `url('../public/img/clouds.png')` }}
+            style={{ backgroundImage: `url('./img/clouds.png')` }}
           ></div>
-          <div className="absolute bottom-[-60px] h-[150px] w-full bg-white"></div>
+          <div className="absolute bottom-[-60px] h-[150px] w-full bg-white z-2 items-center">
+            <GrantAccess handleClick={getUserLocation} />
+          </div>
         </div>
       )}
     </div>
