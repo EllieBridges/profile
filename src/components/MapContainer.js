@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   APIProvider,
   Map,
@@ -9,17 +9,12 @@ import {
 } from "@vis.gl/react-google-maps";
 import "./MapContainer.css";
 
-const MapContainer = () => {
+const MapContainer = ({ latitude, longitude, zoom }) => {
   const map = useMap("e21ebf05c669eb98");
   const [markerRef, marker] = useMarkerRef();
-  const [placesServices, setPlacesServices] = useState(null);
+  // const [placesServices, setPlacesServices] = useState(null);
 
-  const placesLibrary = useMapsLibrary("places");
-
-  useEffect(() => {
-    if (!marker || !placesLibrary) return;
-    setPlacesServices(new placesLibrary.placesServices());
-  }, [marker, placesLibrary]);
+  // const placesLibrary = useMapsLibrary("places");
 
   return (
     <APIProvider
@@ -29,10 +24,15 @@ const MapContainer = () => {
       <Map
         mapId={"e21ebf05c669eb98"}
         className="google-map w-200 h-200 sm:w-800 sm:h-800"
-        zoom={3}
-        center={{ lat: 53.0036294, lng: -105.0135052 }}
+        zoom={5}
+        center={{ lat: latitude, lng: longitude }}
       >
-        <Marker ref={markerRef} position={{ lat: 53.54992, lng: 10.00678 }} />
+        {zoom !== 3 && (
+          <Marker
+            ref={markerRef}
+            position={{ lat: latitude, lng: longitude }}
+          />
+        )}
       </Map>
     </APIProvider>
   );

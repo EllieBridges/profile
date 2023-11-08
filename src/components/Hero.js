@@ -3,43 +3,30 @@ import getWeatherData from "../api/weatherAPI";
 import classNames from "classnames";
 import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
-import GrantAccess from "./GrantAccess";
+import WeatherCard from "./WeatherCard";
 
-function Hero({ weatherImage }) {
-  const [lat, setLat] = useState(null);
-  const [long, setLong] = useState(null);
-  const [weather, setWeather] = useState("");
+function Hero({ handleClick, latitude, longitude }) {
+  const [weather, setWeather] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [dayNight, setDayNight] = useState("day");
 
   // hooks
   const position = useScroll();
   const windowSize = useWindowSize();
 
-  const success = (position) => {
-    setLat(position.coords.latitude);
-    setLong(position.coords.longitude);
-  };
-
-  const getUserLocation = () => {
-    if (!navigator.geolocation) {
-      alert("Geolocation is not supported by your browser");
-      console.log("Geolocation is not supported by your browser");
-    } else {
-      // status.textContent = "Locating…";
-      navigator.geolocation.getCurrentPosition(success, (data) => {
-        console.log(data);
-      });
-    }
-  };
-
   useEffect(() => {
-    getWeatherData(lat, long)
-      .then((weatherType) => setWeather(weatherType))
+    getWeatherData(latitude, longitude)
+      .then((weatherData) => {
+        const { weatherType, weatherDescription, timeOfDay } = weatherData;
+        setWeather(weatherType);
+        setDescription(weatherDescription);
+        setDayNight(timeOfDay);
+      })
       .catch((err) => {
         console.log(err);
       });
-  }, [lat, long]);
+  }, [latitude, longitude]);
 
-  console.log(weather, "WEATHER");
   const classes = classNames("absolute bg-cover bg-right-top w-full");
 
   return (
@@ -49,7 +36,8 @@ function Hero({ weatherImage }) {
       ) : (
         <div className="mt-64 relative w-full h-full">
           <div
-            className={`${classes} bg-[url('../public/img/sun.png')] h-[900px] 2xl:bg-top lg:h-[800px] xl:h-[850px] 2xl:h-[900px]`}
+            className={`${classes} bottom-0 h-[950px] 2xl:bg-top lg:h-[925px] xl:h-[925px] 2xl:h-[950px]`}
+            style={{ backgroundImage: `url('./img/${dayNight}.png')` }}
           ></div>
           <div
             className={`${classes} bg-[url('../public/img/mountains.png')] bottom-0 h-[900px] transition-transform transform translate-y-0 ease-in-out duration-1000 2xl:bg-top lg:h-[800px] xl:h-[850px] 2xl:h-[900px]`}
@@ -59,12 +47,19 @@ function Hero({ weatherImage }) {
             className="absolute bg-[url('../public/img/pink-hills.png')] bottom-0 bg-cover bg-top w-full h-[625px] transition-transform transform translate-y-0 ease-in-out duration-1000 lg:h-[600px] xl:h-[650px] 2xl:h-[700px]"
             style={{ transform: `translateY(${-position * 1.5}px)` }}
           ></div>
-          <div
-            className={`${classes} h-[900px] 2xl:bg-top lg:h-[800px] xl:h-[850px] 2xl:h-[900px] z-3`}
-            style={{ backgroundImage: `url('./img/clouds.png')` }}
-          ></div>
+          {weather !== "sun" && (
+            <div
+              className={`${classes} h-[900px] 2xl:bg-top lg:h-[800px] xl:h-[850px] 2xl:h-[900px] z-3`}
+              style={{ backgroundImage: `url('./img/${weather}.png')` }}
+            ></div>
+          )}
           <div className="absolute bottom-[-60px] h-[150px] w-full bg-white z-2 items-center">
-            <GrantAccess handleClick={getUserLocation} />
+            {windowSize > 800 && (
+              <WeatherCard
+                handleClick={handleClick}
+                weatherDescription={description}
+              />
+            )}
           </div>
         </div>
       )}

@@ -14,14 +14,14 @@ This is my personal professional profile React app, showcasing my skills, experi
 
 ## Introduction
 
-Welcome to my personal professional profile React app! This app is designed to provide information about me, my skills, and the projects I've worked on. It can be used as a portfolio to showcase my work and skills to potential employers or collaborators.
+Welcome to my personal professional profile! This site is designed to provide information about me, my skills, and the projects I've worked on. It can be used as a portfolio to showcase my work and skills to potential employers or collaborators.
 
 ## Features
 
-- Display information about me (name, bio, location, etc.).
+- Display information about me (name, background, interests etc.).
 - List my skills and areas of expertise.
-- Showcase my projects with descriptions and links.
-- Provide links to my social profiles and contact information.
+- Showcase some projects that display my understanding and current level.
+- Provide links to my social and professional profiles.
 - Responsive design for various devices.
 
 ## Screenshots
@@ -34,10 +34,13 @@ To run this app locally or deploy it, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/professional-profile-app.git
+git clone https://github.com/EllieBridges/profile.git
 
 # Change directory
-cd professional-profile-app
+cd profile
 
 # Install dependencies
 npm install
+
+```
+

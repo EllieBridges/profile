@@ -3,13 +3,17 @@ import Description from "../components/Description";
 import Sites from "../components/Sites";
 import Paragraph from "../components/Paragraph";
 
-function Home() {
+function Home({ getUserLocation, latitude, longitude }) {
   return (
     <div id="pageContainer" className="relative h-screen m-5">
-      <Hero />
+      <Hero
+        handleClick={getUserLocation}
+        latitude={latitude}
+        longitude={longitude}
+      />
       <div className="bg-white my-10 w-full text-5xl text-center z-5 md:mb-28">
         <section className="text-lg italic sm:text-2xl md:text-4xl">
-          <h2 className="text-hot-pink py-10 sm:py-5 md:mb-32">
+          <h2 className="text-hot-pink my-16 sm:py-5 md:mb-32">
             <span className="font-black bg-hot-pink text-white">
               “I&apos;m a greater believer in luck,
             </span>
@@ -19,14 +23,11 @@ function Home() {
               — Thomas Jefferson
             </span>
           </h2>
-        </section>
-        <section>
-          <h1 className="pl-50 pr-24 text-orange font-['Sansita_Swashed'] md:pr-48 md:text-8xl">
-            Hello,
-          </h1>
-          <h1 className="pl-50 pl-24 text-orange font-['Sansita_Swashed'] md:pl-48 md:text-8xl">
-            I'm Ellie
-          </h1>
+
+          <div className="my-16 text-4xl pl-50 text-orange font-['Sansita_Swashed'] md:pr-48 md:text-8xl">
+            <h1 className="pr-24">Hello,</h1>
+            <h1 className="pl-16">I'm Ellie</h1>
+          </div>
         </section>
       </div>
 
