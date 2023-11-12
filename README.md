@@ -6,11 +6,7 @@ This is my personal professional profile React app, showcasing my skills, experi
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contact Information](#contact-information)
 
 ## Introduction
 
@@ -24,9 +20,6 @@ Welcome to my personal professional profile! This site is designed to provide in
 - Provide links to my social and professional profiles.
 - Responsive design for various devices.
 
-## Screenshots
-
-Include some screenshots or links to live demos to showcase the app's design and functionality.
 
 ## Installation
 
