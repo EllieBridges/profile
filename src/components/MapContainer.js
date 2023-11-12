@@ -1,17 +1,15 @@
-import { useState } from "react";
 import {
   APIProvider,
   Map,
-  useMap,
+  // useMap,
   Marker,
   useMarkerRef,
-  useMapsLibrary,
 } from "@vis.gl/react-google-maps";
 import "./MapContainer.css";
 
 const MapContainer = ({ latitude, longitude, zoom }) => {
-  const map = useMap("e21ebf05c669eb98");
-  const [markerRef, marker] = useMarkerRef();
+  // const map = useMap("e21ebf05c669eb98");
+  const [markerRef] = useMarkerRef();
   // const [placesServices, setPlacesServices] = useState(null);
 
   // const placesLibrary = useMapsLibrary("places");
