@@ -1,9 +1,10 @@
 import Description from "../components/Description";
 import ImageGallery from "../components/ImageGallery";
+import Footer from "../components/Footer";
 
 function Gallery() {
   return (
-    <div className="mt-24">
+    <div className="flex flex-col mx-auto items-center text-center">
       <ImageGallery />
       <Description
         title="Photo Gallery"
@@ -19,6 +20,10 @@ function Gallery() {
           "Securing photos - watermarks, file size",
           "Reading documentation",
         ]}
+      />
+      <Footer
+        title="Find more about my professional history here"
+        link="https://www.linkedin.com/in/ellie-bridges-244b7582"
       />
     </div>
   );

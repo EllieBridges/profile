@@ -22,7 +22,7 @@ const MapContainer = ({ latitude, longitude, zoom }) => {
       <Map
         mapId={"e21ebf05c669eb98"}
         className="google-map w-200 h-200 sm:w-800 sm:h-800"
-        zoom={5}
+        zoom={2}
         center={{ lat: latitude, lng: longitude }}
       >
         {zoom !== 3 && (

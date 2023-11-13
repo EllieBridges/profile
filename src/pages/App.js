@@ -7,8 +7,8 @@ import Gallery from "./Gallery";
 import Colour from "./Colour";
 
 function App() {
-  const [lat, setLat] = useState(49.4745298);
-  const [long, setLong] = useState(-95.6625551);
+  const [lat, setLat] = useState(0);
+  const [long, setLong] = useState(0);
 
   const success = (position) => {
     setLat(position.coords.latitude);
@@ -18,10 +18,7 @@ function App() {
   const getUserLocation = () => {
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser");
-    }
-    // else if ((lat !== 52.605) & (long !== -101.798)) {
-    //   return;}
-    else {
+    } else {
       // status.textContent = "Locating…";
       navigator.geolocation.getCurrentPosition(success, (data) => {
         console.log(data);
@@ -30,11 +27,9 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col m-5  mx-auto items-center">
-      <div className="">
-        <NavBar />
-      </div>
-      <div className="m-5">
+    <div className="flex flex-col m-0 p-0 w-full items-center text-center ">
+      <NavBar />
+      <div className="pt-24 md:pt-32 lg:pt-44">
         <Route path="/">
           <Home
             getUserLocation={getUserLocation}

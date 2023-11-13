@@ -5,7 +5,7 @@ import useScroll from "../hooks/useScroll";
 import useWindowSize from "../hooks/useWindowSize";
 import WeatherCard from "./WeatherCard";
 
-function Hero({ handleClick, latitude, longitude }) {
+function Hero({ getUserLocation, latitude, longitude }) {
   const [weather, setWeather] = useState(null);
   const [description, setDescription] = useState(null);
   const [dayNight, setDayNight] = useState("day");
@@ -32,9 +32,9 @@ function Hero({ handleClick, latitude, longitude }) {
   return (
     <div className="relative h-1/2 w-full mx-auto z-2 md:h-2/3 md:h-5/6 lg:w-4/5 z-2">
       {windowSize < 800 ? (
-        <div className="mt-24 pb-12 flex items-center justify-center mx-auto bg-[url('../public/img/hero-still.jpg')] bg-cover bg-right-top h-full w-full sm:bg-center-top sm:w-full sm:h-full sm:mt-40"></div>
+        <div className="flex items-center justify-center mx-auto bg-[url('../public/img/hero-still.jpg')] bg-cover bg-right-top h-full w-full sm:bg-center-top sm:w-full sm:h-full sm:mt-40"></div>
       ) : (
-        <div className="mt-64 relative w-full h-full">
+        <div className="mt-72 relative w-full h-full">
           <div
             className={`${classes} bottom-0 h-[950px] 2xl:bg-top lg:h-[925px] xl:h-[925px] 2xl:h-[950px]`}
             style={{ backgroundImage: `url('./img/${dayNight}.png')` }}
@@ -49,14 +49,14 @@ function Hero({ handleClick, latitude, longitude }) {
           ></div>
           {weather !== "sun" && (
             <div
-              className={`${classes} h-[900px] 2xl:bg-top lg:h-[800px] xl:h-[850px] 2xl:h-[900px] z-3`}
+              className={`${classes} bottom-0 h-[950px] 2xl:bg-top lg:h-[925px] xl:h-[925px] 2xl:h-[950px]`}
               style={{ backgroundImage: `url('./img/${weather}.png')` }}
             ></div>
           )}
           <div className="absolute bottom-[-60px] h-[150px] w-full bg-white z-2 items-center">
             {windowSize > 800 && (
               <WeatherCard
-                handleClick={handleClick}
+                getUserLocation={getUserLocation}
                 weatherDescription={description}
               />
             )}

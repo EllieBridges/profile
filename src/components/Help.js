@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import classNames from "classnames";
 import { GoQuestion } from "react-icons/go";
 
-function Help() {
+function Help({ className }) {
   const [toggle, setToggle] = useState(true);
   const helpEl = useRef();
 
@@ -9,6 +10,7 @@ function Help() {
     setToggle(!toggle);
   };
 
+  //click anywhere to close help box
   useEffect(() => {
     const handler = (event) => {
       if (!helpEl.current) {
@@ -26,6 +28,11 @@ function Help() {
     };
   }, []);
 
+  const classes = classNames(
+    "font-sans m-6 p-10 rounded lg:w-4/5 mx-auto text-white",
+    className
+  );
+
   const helpTool = toggle ? (
     <GoQuestion
       size={30}
@@ -33,11 +40,9 @@ function Help() {
       className="hover:bg-yellow-300 rounded-full"
     />
   ) : (
-    <div ref={helpEl} className="font-sans bg-light-pink p-3 rounded">
-      <h1 className="text-lg md:text-xl font-bold text-white m-1">
-        How to Play
-      </h1>
-      <h3 className="text-md font-bold text-white m-1">
+    <div ref={helpEl} className={`${classes}`}>
+      <h1 className="text-lg md:text-2xl font-bold  m-1">How to Play</h1>
+      <h3 className="text-md font-bold my-3 md:text-xl">
         This is a game to test your hexadecimal colour knowledge
       </h3>
       <p className="text-sm">

@@ -18,7 +18,7 @@ function Link({ to, children, className, activeClassName }) {
     className,
     currentPath === to && activeClassName,
     children === "Ellie Bridges" &&
-      "font-['Sansita_Swashed'] italic text-xl md:text-2xl lg:text-3xl text-orange"
+      "font-['Sansita_Swashed'] italic text-lg sm:text-xl md:text-2xl lg:text-3xl text-orange text-left"
   );
 
   return (

@@ -5,20 +5,22 @@
 }
 
 .google-map {
-    margin: auto;
+    margin-top: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 450px) {
     .google-map {
         height:300px;
-        width:400px;
+        width:280px;
     }
 }
 
-@media only screen and (min-width: 600px) {
+
+@media only screen and (min-width: 450px) {
     .google-map {
-        height: 575px;
-        width: 575px;
+        height: 600px;
+        width: 400px;
     }
     }
 
@@ -26,6 +28,13 @@
     .google-map {
         height: 750px;
         width: 750px;
+    }
+    }
+
+@media only screen and (min-width: 1200px) {
+    .google-map {
+        height: 800px;
+        width: 1000px;
     }
     }
 

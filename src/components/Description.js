@@ -1,16 +1,18 @@
 function Description({ title, content, colour, accent, softwares, skills }) {
   return (
     <div
-      className={`relative mt-24 text-white text-sm mx-auto mb-14 border border-0 rounded border-l-8 border-b-8 p-4 font-inter z-2 sm:text-lg sm:mt-32 md:mx-30 lg:w-4/5`}
+      className={`relative text-white mt-8 text-sm mx-auto mb-14 border border-0 rounded border-l-8 border-b-8 p-4 font-inter z-2 sm:text-lg sm:mt-32 md:mx-30 lg:w-4/5`}
       style={{ borderColor: `${accent}`, backgroundColor: `${colour}` }}
     >
       <h1
-        className={`text-2xl font-bold my-4 md:text-4xl`}
+        className={`text-2xl font-bold my-6 md:text-4xl`}
         style={{ color: `${accent}` }}
       >
         {title}
       </h1>
-      <p className="font-inter my-4 text-justify md:text-lg">{content}</p>
+      <p className="font-inter my-4 p-4 text-justify md:mx-32 md:text-lg">
+        {content}
+      </p>
       <h2
         className="font-bold text-2xl text-center mt-10"
         style={{ color: `${accent}` }}

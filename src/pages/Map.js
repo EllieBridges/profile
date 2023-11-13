@@ -2,17 +2,18 @@ import { useState } from "react";
 import Description from "../components/Description";
 import GrantAccess from "../components/GrantAccess";
 import MapContainer from "../components/MapContainer";
+import Footer from "../components/Footer";
 
 function Map({ getUserLocation, latitude, longitude }) {
   const [zoom, setZoom] = useState(3);
 
   const handleClick = () => {
     getUserLocation();
-    setZoom(10);
+    setZoom(12);
   };
 
   return (
-    <div className="flex flex-col mt-24 mx-20">
+    <div className="flex flex-col mx-auto items-center text-center">
       <MapContainer latitude={latitude} longitude={longitude} zoom={zoom} />
       <GrantAccess
         className="bg-orange mx-auto justify-self-center z-10 hover:bg-pink"
@@ -33,6 +34,10 @@ function Map({ getUserLocation, latitude, longitude }) {
           "Props",
           "Custom map styling",
         ]}
+      />
+      <Footer
+        title="Find more about my professional history here"
+        link="https://www.linkedin.com/in/ellie-bridges-244b7582"
       />
     </div>
   );

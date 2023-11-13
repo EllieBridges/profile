@@ -13,7 +13,9 @@ function GameOver({ handleClick, topScore }) {
     } else if (score === 0) {
       return "Hard luck, try again";
     } else {
-      return `You scored ${topScore} points`;
+      return topScore !== 1
+        ? `You scored ${topScore} points`
+        : `You scored ${topScore} point`;
     }
   };
 

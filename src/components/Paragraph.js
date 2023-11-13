@@ -1,7 +1,13 @@
-function Paragraph({ content, colour, accent }) {
+import classNames from "classnames";
+
+function Paragraph({ content, colour, accent, className }) {
+  const classes = classNames(
+    "relative p-4 text-sm text-white text-sm text-justify font-sans z-2 md:text-lg lg:text-2xl ",
+    className
+  );
   return (
     <div
-      className="relative mx-auto p-4 text-sm text-white text-sm text-justify rounded font-inter z-2 sm:text-lg lg:w-4/5"
+      className={classes}
       style={{
         backgroundColor: `${accent}`,
         color: `${colour}`,
