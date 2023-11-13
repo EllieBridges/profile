@@ -5,7 +5,7 @@ import Home from "./Home";
 import Map from "./Map";
 import Gallery from "./Gallery";
 import Colour from "./Colour";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet-async";
 
 function App() {
   const [lat, setLat] = useState(0);
@@ -29,6 +29,15 @@ function App() {
 
   return (
     <div className="flex flex-col m-0 p-0 w-full items-center text-center ">
+      {/* <Helmet>
+        <title property="og:title">Ellie Bridges Profile</title>
+        <meta name="description" content="A Frontend Development Portfolio" />
+        <link
+          rel="mountain-image"
+          sizes="72x72"
+          href="../public/img/hero-still.jpg"
+        />
+      </Helmet> */}
       <NavBar />
       <div className="pt-24 md:pt-32 lg:pt-44">
         <Route path="/">
@@ -55,17 +64,6 @@ function App() {
           <Gallery />
         </Route>
       </div>
-      <Helmet>
-        <title property="og:title">Ellie Bridges Profile</title>
-        <link rel="canonical" content="https://elliebridges.vercel.app/" />
-        <meta property="og:type" content="website" />
-        <meta name="description" content="A Frontend Development Portfolio" />
-        <link
-          rel="mountain-image"
-          sizes="72x72"
-          href="../public/img/hero-still.jpg"
-        />
-      </Helmet>
     </div>
   );
 }
