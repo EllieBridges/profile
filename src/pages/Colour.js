@@ -41,8 +41,6 @@ function Colour() {
   const answer = colours[index];
   const hex = rgbToHex(answer);
 
-  console.log("answer", answer);
-
   //handle user choice - results in points if correct/ game over if not.
   const handleSelection = (e) => {
     e.preventDefault();

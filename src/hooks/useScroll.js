@@ -8,7 +8,6 @@ const useScroll = () => {
 
   useEffect(
     (position) => {
-      console.log(position);
       //CHECK ref is correctly adjusting, but not setScroll
       const handleScroll = () => {
         //scroll down movement

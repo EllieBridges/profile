@@ -4,7 +4,6 @@ const APIKEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
 const getWeatherData = async (lat, long) => {
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${APIKEY}`;
-  console.log(apiURL);
   try {
     const response = await axios.get(apiURL);
     const weatherData = response.data;
