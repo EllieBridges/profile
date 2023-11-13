@@ -56,13 +56,15 @@ function App() {
         </Route>
       </div>
       <Helmet>
-        <meta property="og:title" content="Ellie Bridges Profile" />
-        <meta
-          property="og:description"
-          content="A Frontend Development Portfolio"
+        <title property="og:title">Ellie Bridges Profile</title>
+        <link rel="canonical" content="https://elliebridges.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta name="description" content="A Frontend Development Portfolio" />
+        <link
+          rel="mountain-image"
+          sizes="72x72"
+          href="../public/img/hero-still.jpg"
         />
-        <meta property="og:image" content="../public/img/hero-still.png" />
-        <meta property="og:url" content="https://elliebridges.vercel.app/" />
       </Helmet>
     </div>
   );
