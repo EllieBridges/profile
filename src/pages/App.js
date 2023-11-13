@@ -5,6 +5,7 @@ import Home from "./Home";
 import Map from "./Map";
 import Gallery from "./Gallery";
 import Colour from "./Colour";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [lat, setLat] = useState(0);
@@ -54,6 +55,15 @@ function App() {
           <Gallery />
         </Route>
       </div>
+      <Helmet>
+        <meta property="og:title" content="Ellie Bridges Profile" />
+        <meta
+          property="og:description"
+          content="A Frontend Development Portfolio"
+        />
+        <meta property="og:image" content="../public/img/hero-still.png" />
+        <meta property="og:url" content="https://elliebridges.vercel.app/" />
+      </Helmet>
     </div>
   );
 }
