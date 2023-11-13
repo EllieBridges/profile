@@ -93,7 +93,7 @@ function Colour() {
         ) : (
           <GameOver handleClick={playAgain} topScore={points} />
         )}
-        <div className="mr-5">
+        <div className="">
           <Help className="bg-light-pink" />
         </div>
       </div>

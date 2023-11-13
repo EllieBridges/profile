@@ -29,7 +29,7 @@ function Help({ className }) {
   }, []);
 
   const classes = classNames(
-    "font-sans m-6 p-10 rounded lg:w-4/5 mx-auto text-white",
+    "w-full font-sans p-3 rounded mt-10 mx-auto text-white sm:p-10 sm:w-2/3 lg:w-4/5",
     className
   );
 
@@ -37,11 +37,11 @@ function Help({ className }) {
     <GoQuestion
       size={30}
       color="black"
-      className="hover:bg-yellow-300 rounded-full"
+      className="hover:bg-yellow-300 rounded-full mr-10"
     />
   ) : (
     <div ref={helpEl} className={`${classes}`}>
-      <h1 className="text-lg md:text-2xl font-bold  m-1">How to Play</h1>
+      <h1 className="text-lg font-bold md:text-2xl">How to Play</h1>
       <h3 className="text-md font-bold my-3 md:text-xl">
         This is a game to test your hexadecimal colour knowledge
       </h3>
