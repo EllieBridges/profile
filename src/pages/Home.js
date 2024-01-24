@@ -7,22 +7,14 @@ import Footer from "../components/Footer";
 function Home({ getUserLocation, latitude, longitude }) {
   return (
     <div id="pageContainer" className="relative mx-auto h-screen p-0 m-0">
-      <Hero
-        getUserLocation={getUserLocation}
-        latitude={latitude}
-        longitude={longitude}
-      />
+      <Hero getUserLocation={getUserLocation} latitude={latitude} longitude={longitude} />
 
       <section className="text-lg italic sm:text-2xl md:text-4xl bg-white my-16 w-full text-5xl text-center z-5 md:py-52">
         <h2 className="text-hot-pink">
-          <span className="font-black bg-hot-pink text-white">
-            “I&apos;m a greater believer in luck,
-          </span>
+          <span className="font-black bg-hot-pink text-white">“I&apos;m a greater believer in luck,</span>
           <br />
           and I find the harder I work the more I have of it.”
-          <span className="text-base not-italic sm:text-2xl">
-            — Thomas Jefferson
-          </span>
+          <span className="text-base not-italic sm:text-2xl">— Thomas Jefferson</span>
         </h2>
       </section>
 
@@ -44,11 +36,9 @@ function Home({ getUserLocation, latitude, longitude }) {
         />
 
         <Paragraph
-          content=" I've been in the Technical Industry for over 5 years, specialising in
+          content="I've been in the Technical Industry for over 5 years, specialising in
       Geographical Information Systems (GIS). I love the logic and the power it holds
-      to communicate with so many different audiences. I wanted to shift my
-      career path that will further challenge my technical ability and
-      creative problem-solving skills."
+      to communicate with so many different audiences. I wanted to explore a new area that compliments my existing knowledge"
           colour="#ffffff"
           accent="#f6926d"
           className="mx-5 md:mx-32"
@@ -92,11 +82,7 @@ function Home({ getUserLocation, latitude, longitude }) {
           "Props",
         ]}
       />
-      <Footer
-        title="Have you tried the Colour Game yet?"
-        path={"/colour"}
-        label={"Try now!"}
-      />
+      <Footer title="Have you tried the Colour Game yet?" path={"/colour"} label={"Try now!"} />
     </div>
   );
 }

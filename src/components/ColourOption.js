@@ -8,7 +8,6 @@ function ColourOption({
   selected,
 }) {
   const colourString = colour.join();
-  console.log("colourString", colourString, "selected", selected);
 
   const divColour = { backgroundColor: `rgb(${colourString})` };
 
